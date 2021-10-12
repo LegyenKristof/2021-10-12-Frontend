@@ -7,7 +7,7 @@
     float: right;
 }
 
-.X:hover{
+.X:hover, .sor input:hover{
     cursor: pointer;
 }
 
