@@ -1,7 +1,6 @@
 .sor{
     border-bottom: solid black 1px;
-    padding: 10px;
-    width: 500px;
+    padding: 20px;
 }
 
 .X{
@@ -10,4 +9,22 @@
 
 .kihuzott{
     text-decoration: line-through;
+}
+
+label{
+    padding-left: 20px;
+}
+
+#inputDiv{
+    margin-top: 20px;
+}
+
+#inputDiv input, button{
+    width: 49%;
+    margin: 0;
+    padding: 0;
+}
+
+#inputDiv button{
+    float: right;
 }
