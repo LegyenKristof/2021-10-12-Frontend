@@ -1,5 +1,3 @@
-let lista = [];
-
 document.addEventListener("DOMContentLoaded", init);
 
 function init(){
@@ -22,9 +20,9 @@ function felvetel(){
     checkBox.addEventListener("click", pipa);
     ujSor.appendChild(checkBox);
 
-    let label = document.createElement("label");
-    label.innerHTML = input.value;
-    ujSor.appendChild(label);
+    let szoveg = document.createElement("label");
+    szoveg.innerHTML = input.value;
+    ujSor.appendChild(szoveg);
 
     let x = document.createElement("label");
     x.innerHTML = "X";
@@ -37,9 +35,11 @@ function felvetel(){
 }
 
 function pipa(e){
-
+    let sor = e.target.parentNode;
+    let szoveg = sor.getElementsByTagName("label")[0];
+    szoveg.classList.toggle("kihuzott");
 }
 
 function torol(e){
-    
+    e.target.parentNode.remove();
 }
