@@ -44,3 +44,7 @@ h1{
 #searchInput{
     width: 49%;
 }
+
+.hidden{
+    display: none;
+}
