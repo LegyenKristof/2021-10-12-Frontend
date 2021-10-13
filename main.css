@@ -32,3 +32,15 @@ label{
 #inputDiv button{
     float: right;
 }
+
+#hideCheckbox{
+    transform: scale(2);
+}
+
+h1{
+    text-align: center;
+}
+
+#searchInput{
+    width: 49%;
+}
