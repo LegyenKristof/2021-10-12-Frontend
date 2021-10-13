@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", init);
 let hideCheckbox;
+let lista;
 
 function init(){
     document.getElementById("btn").addEventListener("click", felvetel);
@@ -7,6 +8,7 @@ function init(){
     hideCheckbox.addEventListener("click", hide);    
     document.getElementById("deleteAllDone").addEventListener("click", deleteAllDone);
     document.getElementById("searchInput").addEventListener("input", search);
+    lista = document.getElementById("todoLista");
 }
 
 function felvetel(){
@@ -17,7 +19,7 @@ function felvetel(){
         return;
     }
 
-    let ujSor = document.createElement("div");
+    let ujSor = document.createElement("li");
     ujSor.className = "sor";
 
     let checkBox = document.createElement("input");
@@ -53,38 +55,35 @@ function torol(e){
 }
 
 function hide(){
-    let sorok = document.getElementById("todoLista");
-    let db = sorok.getElementsByTagName("div").length;
+    let db = lista.getElementsByTagName("li").length;
     for(let i = 0; i < db; i++){
-        if (sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].className == "kihuzott"){
-            sorok.getElementsByTagName("div")[i].classList.toggle("hidden");
+        if (lista.getElementsByTagName("li")[i].getElementsByTagName("label")[0].className == "kihuzott"){
+            lista.getElementsByTagName("li")[i].classList.toggle("hidden");
         }
     }
 }
 
 function deleteAllDone(){
-    let sorok = document.getElementById("todoLista");
-    let db = sorok.getElementsByTagName("div").length;
+    let db = lista.getElementsByTagName("li").length;
     for(let i = 0; i < db; i++){
-        if (sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].className == "kihuzott"){
-            sorok.getElementsByTagName("div")[i].remove();
+        if (lista.getElementsByTagName("li")[i].getElementsByTagName("label")[0].className == "kihuzott"){
+            lista.getElementsByTagName("li")[i].remove();
             db--;
             i--;
         }
     }
 }
 
-function search(e) {
-    let sorok = document.getElementById("todoLista");
-    let db = sorok.getElementsByTagName("div").length;
+function search() {
+    let db = lista.getElementsByTagName("li").length;
     for(let i = 0; i < db; i++){
-        let sorSzoveg = sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].innerHTML.toLowerCase();
+        let sorSzoveg = lista.getElementsByTagName("li")[i].getElementsByTagName("label")[0].innerHTML.toLowerCase();
         let keresettSzoveg = document.getElementById("searchInput").value.toLowerCase();
         if (sorSzoveg.includes(keresettSzoveg)){
-            sorok.getElementsByTagName("div")[i].classList.remove("hiddenSearch");
+            lista.getElementsByTagName("li")[i].classList.remove("hiddenSearch");
         }
         else{
-            sorok.getElementsByTagName("div")[i].classList.add("hiddenSearch");
+            lista.getElementsByTagName("li")[i].classList.add("hiddenSearch");
         }
     }
 }
