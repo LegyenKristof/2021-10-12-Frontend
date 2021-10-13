@@ -74,6 +74,17 @@ function deleteAllDone(e){
     }
 }
 
-function search() {
-    
+function search(e) {
+    let sorok = e.target.parentNode.parentNode.getElementsByTagName("div")[0];
+    let db = sorok.getElementsByTagName("div").length;
+    for(let i = 0; i < db; i++){
+        let sorSzoveg = sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].innerHTML.toLowerCase();
+        let keresettSzoveg = document.getElementById("searchInput").value.toLowerCase();
+        if (sorSzoveg.includes(keresettSzoveg)){
+            sorok.getElementsByTagName("div")[i].classList.remove("hiddenSearch");
+        }
+        else{
+            sorok.getElementsByTagName("div")[i].classList.add("hiddenSearch");
+        }
+    }
 }

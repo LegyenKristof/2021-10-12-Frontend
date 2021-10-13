@@ -48,3 +48,7 @@ h1{
 .hidden{
     display: none;
 }
+
+.hiddenSearch{
+    display: none;
+}
