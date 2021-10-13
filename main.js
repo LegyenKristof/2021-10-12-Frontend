@@ -52,8 +52,8 @@ function torol(e){
     e.target.parentNode.remove();
 }
 
-function hide(e){
-    let sorok = e.target.parentNode.parentNode.parentNode.getElementsByTagName("div")[0];
+function hide(){
+    let sorok = document.getElementById("todoLista");
     let db = sorok.getElementsByTagName("div").length;
     for(let i = 0; i < db; i++){
         if (sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].className == "kihuzott"){
@@ -62,8 +62,8 @@ function hide(e){
     }
 }
 
-function deleteAllDone(e){
-    let sorok = e.target.parentNode.parentNode.getElementsByTagName("div")[0];
+function deleteAllDone(){
+    let sorok = document.getElementById("todoLista");
     let db = sorok.getElementsByTagName("div").length;
     for(let i = 0; i < db; i++){
         if (sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].className == "kihuzott"){
@@ -75,7 +75,7 @@ function deleteAllDone(e){
 }
 
 function search(e) {
-    let sorok = e.target.parentNode.parentNode.getElementsByTagName("div")[0];
+    let sorok = document.getElementById("todoLista");
     let db = sorok.getElementsByTagName("div").length;
     for(let i = 0; i < db; i++){
         let sorSzoveg = sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].innerHTML.toLowerCase();

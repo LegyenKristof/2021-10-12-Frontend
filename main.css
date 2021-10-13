@@ -1,6 +1,7 @@
 .sor{
     border-bottom: solid black 1px;
     padding: 20px;
+    margin: 0 !important;
 }
 
 .X{
@@ -19,36 +20,61 @@ label{
     padding-left: 20px;
 }
 
-#inputDiv{
-    margin-top: 20px;
-}
-
-#inputDiv input, button{
-    width: 49%;
-    margin: 0;
-    padding: 0;
-}
-
-#inputDiv button{
-    float: right;
-}
-
-#hideCheckbox{
-    transform: scale(2);
-}
-
-h1{
-    text-align: center;
-}
-
-#searchInput{
-    width: 49%;
-}
-
 .hidden{
     display: none;
 }
 
 .hiddenSearch{
     display: none;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+#root div{
+    margin: 20px 0 20px 0;
+}
+
+#btn{
+    width: 30%;
+}
+
+#input{
+    width: 70%;
+}
+
+.keret{
+    border: 10px black solid !important;
+    border-radius: 0 !important;
+}
+
+span{
+    width: 40%;
+    margin: 0;
+    height: 75px;
+    padding: 12px;
+    font-size: 14pt;
+}
+
+#deleteAllDone{
+    width: 40%;
+    margin: 0;
+    height: 75px;
+}
+
+#searchInput{
+    width: 20%;
+    margin: 0;  
+    height: 75px;  
+}
+
+span input{
+    transform: scale(1.5);
+    float: right;
+    margin-top: 9px;
 }
