@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", init);
 function init(){
     document.getElementById("btn").addEventListener("click", felvetel)
     document.getElementById("hideCheckbox").addEventListener("click", hide)
+    document.getElementById("deleteAllDone").addEventListener("click", deleteAllDone)
 }
 
 function felvetel(){
@@ -47,9 +48,22 @@ function torol(e){
 
 function hide(e){
     let sorok = e.target.parentNode.parentNode.parentNode.getElementsByTagName("div")[0];
-    for(let i = 0; i < sorok.getElementsByTagName("div").length; i++){
+    let db = sorok.getElementsByTagName("div").length;
+    for(let i = 0; i < db; i++){
         if (sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].className == "kihuzott"){
             sorok.getElementsByTagName("div")[i].classList.toggle("hidden");
+        }
+    }
+}
+
+function deleteAllDone(e){
+    let sorok = e.target.parentNode.parentNode.getElementsByTagName("div")[0];
+    let db = sorok.getElementsByTagName("div").length;
+    for(let i = 0; i < db; i++){
+        if (sorok.getElementsByTagName("div")[i].getElementsByTagName("label")[0].className == "kihuzott"){
+            sorok.getElementsByTagName("div")[i].remove();
+            db--;
+            i--;
         }
     }
 }
