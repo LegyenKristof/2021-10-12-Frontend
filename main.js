@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", init);
+let hideCheckbox;
 
 function init(){
-    document.getElementById("btn").addEventListener("click", felvetel)
-    document.getElementById("hideCheckbox").addEventListener("click", hide)
-    document.getElementById("deleteAllDone").addEventListener("click", deleteAllDone)
+    document.getElementById("btn").addEventListener("click", felvetel);
+    hideCheckbox = document.getElementById("hideCheckbox");
+    hideCheckbox.addEventListener("click", hide);    
+    document.getElementById("deleteAllDone").addEventListener("click", deleteAllDone);
+    document.getElementById("searchInput").addEventListener("input", search);
 }
 
 function felvetel(){
@@ -36,10 +39,13 @@ function felvetel(){
     input.value = "";
 }
 
-function pipa(e){
+function pipa(e){    
     let sor = e.target.parentNode;
     let szoveg = sor.getElementsByTagName("label")[0];
     szoveg.classList.toggle("kihuzott");
+    if (e.target.checked && hideCheckbox.checked){
+        sor.classList.toggle("hidden");
+    }
 }
 
 function torol(e){
@@ -66,4 +72,8 @@ function deleteAllDone(e){
             i--;
         }
     }
+}
+
+function search() {
+    
 }
